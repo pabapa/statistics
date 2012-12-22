@@ -1,6 +1,6 @@
 package statistics
 
-/* statistics/pvariance.go
+/* statistics/main_test.go
  * 
  * Copyright (C) 1996, 1997, 1998, 1999, 2000 Jim Davies, Brian Gough
  * 
@@ -19,14 +19,22 @@ package statistics
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-// PVariance finds the pooled variance of two datasets 
-func PVariance(data1, data2 Interface) float64 {
+import (
+	"testing"
+)
 
-	n1 := data1.Len()
-	n2 := data2.Len()
+// Main test routine
+func TestMain(t *testing.T) {
 
-	var1 := Variance(data1)
-	var2 := Variance(data2)
+	for s1 := 1; s1 < 4; s1++ {
+		s2 := 1
+		if s1 >= 3 {
+			s2 = s1 - 1
+		}
 
-	return ((float64(n1-1) * var1) + (float64(n2-1) * var2)) / float64(n1+n2-2)
+		testFloat64(t, s1, s2)
+		testInt64(t, s1, s2)
+	}
+
+	testNist()
 }
