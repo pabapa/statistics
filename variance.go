@@ -9,9 +9,10 @@ import (
 )
 
 func _variance(data Interface, mean float64) (variance float64) {
+	Len := data.Len()
 
 	// calculate the sum of the squares
-	for i := 0; i < data.Len(); i++ {
+	for i := 0; i < Len; i++ {
 		delta := data.Value(i) - mean
 		// TODO: long double for variance... How to implement in Go?
 		variance += (delta*delta - variance) / float64(i+1)

@@ -13,9 +13,9 @@ func WSkew(w, data Interface) float64 {
 // Compute the weighted skewness of a dataset
 func WSkewMeanSd(w, data Interface, wmean, wsd float64) (wskew float64) {
 	var W float64
-	size := data.Len()
+	Len := data.Len()
 
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		wi := w.Value(i)
 
 		if wi > 0 {

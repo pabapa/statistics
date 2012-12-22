@@ -17,10 +17,10 @@ func WAbsdev(w, data Interface) float64 {
 func WAbsdevMean(w, data Interface, wmean float64) (wabsdev float64) {
 
 	var W float64
-	size := data.Len()
+	Len := data.Len()
 
 	// calculate the sum of the absolute deviations
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		wi := w.Value(i)
 
 		if wi > 0 {

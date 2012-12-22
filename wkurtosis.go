@@ -14,9 +14,9 @@ func WKurtosis(w, data Interface) float64 {
 func WKurtosisMeanSd(w, data Interface, wmean, wsd float64) float64 {
 
 	var wavg, W float64
-	size := data.Len()
+	Len := data.Len()
 
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		wi := w.Value(i)
 
 		if wi > 0 {

@@ -2,6 +2,8 @@
 
 Pure [Go](http://www.golang.org) implementation of the GSL Statistics library. See http://www.gnu.org/software/gsl/manual/html_node/Statistics.html
 
+For an overview see http://godoc.org/github.com/grd/statistics
+
 It uses interfaces for the data access. So different data types can be used.
 Two datatypes are pre-defined: Float64 and Int64.
 

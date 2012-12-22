@@ -12,7 +12,9 @@ func Skew(data Interface) float64 {
 
 // SkewMeanSd calculates the skewness of a dataset
 func SkewMeanSd(data Interface, mean, sd float64) (skew float64) {
-	for i := 0; i < data.Len(); i++ {
+	Len := data.Len()
+	
+	for i := 0; i < Len; i++ {
 		x := (data.Value(i) - mean) / sd
 		skew += (x*x*x - skew) / float64(i+1)
 	}

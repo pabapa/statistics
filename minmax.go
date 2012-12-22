@@ -10,10 +10,10 @@ import (
 
 // Max finds the first largest member and the members position within the data 
 func Max(data Interface) (max float64, max_index int) {
-	size := data.Len()
+	Len := data.Len()
 	max = data.Value(0)
 
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		xi := data.Value(i)
 
 		if xi > max {
@@ -33,11 +33,10 @@ func Max(data Interface) (max float64, max_index int) {
 
 // Min finds the first smallest member and the members position within the data 
 func Min(data Interface) (min float64, min_index int) {
-
-	size := data.Len()
+	Len := data.Len()
 	min = data.Value(0)
 
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		xi := data.Value(i)
 
 		if xi < min {
@@ -58,12 +57,11 @@ func Min(data Interface) (min float64, min_index int) {
 // Minmax finds the first smallest and largest members and 
 // the members positions within the data 
 func Minmax(data Interface) (min float64, min_index int, max float64, max_index int) {
-
-	size := data.Len()
+	Len := data.Len()
 	min = data.Value(0)
 	max = data.Value(0)
 
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		xi := data.Value(i)
 
 		if xi < min {

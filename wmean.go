@@ -7,9 +7,9 @@ package statistics
 // WMean calculates the weighted arithmetic mean of a dataset
 func WMean(w, data Interface) (wmean float64) {
 	var W float64
-	size := data.Len()
+	Len := data.Len()
 
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		wi := w.Value(i)
 
 		if wi > 0 {

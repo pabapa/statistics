@@ -10,11 +10,11 @@ func Lag1Autocorrelation(data Interface) float64 {
 }
 
 func Lag1AutocorrelationMean(data Interface, mean float64) float64 {
-
 	var r1, q float64
+	Len := data.Len()
 	v := (data.Value(0) - mean) * (data.Value(0) - mean)
 
-	for i := 1; i < data.Len(); i++ {
+	for i := 1; i < Len; i++ {
 		delta0 := data.Value(i-1) - mean
 		delta1 := data.Value(i) - mean
 		q += (delta0*delta1 - q) / float64(i+1)

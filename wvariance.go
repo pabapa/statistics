@@ -10,10 +10,10 @@ import (
 
 func wvariance(w, data Interface, wmean float64) (wvariance float64) {
 	var W float64
-	size := data.Len()
+	Len := data.Len()
 
 	// the sum of the squares
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		wi := w.Value(i)
 
 		if wi > 0 {
@@ -27,12 +27,11 @@ func wvariance(w, data Interface, wmean float64) (wvariance float64) {
 }
 
 func factor(w Interface) (factor float64) {
-
 	var a, b float64
-	size := w.Len()
+	Len := w.Len()
 
 	// the sum of the squares
-	for i := 0; i < size; i++ {
+	for i := 0; i < Len; i++ {
 		wi := w.Value(i)
 
 		if wi > 0 {

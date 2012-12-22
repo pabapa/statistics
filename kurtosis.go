@@ -12,8 +12,9 @@ func Kurtosis(data Interface) float64 {
 
 func KurtosisMainSd(data Interface, mean, sd float64) float64 {
 	var avg, kurtosis float64
+	Len := data.Len()
 
-	for i := 0; i < data.Len(); i++ {
+	for i := 0; i < Len; i++ {
 		x := (data.Value(i) - mean) / sd
 		avg += (x*x*x*x - avg) / float64(i+1)
 	}

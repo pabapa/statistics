@@ -15,13 +15,13 @@ func Absdev(data Interface) float64 {
 
 // AbsdevMean finds the absolute deviation of the data interface
 func AbsdevMean(data Interface, mean float64) float64 {
-
 	var sum float64
+	Len := data.Len()
 
 	// the sum of the absolute deviations 
-	for i := 0; i < data.Len(); i++ {
+	for i := 0; i < Len; i++ {
 		sum += math.Abs(data.Value(i) - mean)
 	}
 
-	return sum / float64(data.Len())
+	return sum / float64(Len)
 }
