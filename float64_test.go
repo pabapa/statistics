@@ -20,44 +20,11 @@ package statistics
  */
 
 import (
-	"fmt"
 	"math"
-	"os"
 	"sort"
 	"testing"
 )
 
-func gsl_test(status bool, test_description string, a ...interface{}) {
-
-	if status == true {
-		s := fmt.Sprintf(test_description, a)
-		fmt.Printf("FAIL: %s\n", s)
-		os.Exit(1)
-	}
-}
-
-func gsl_test_rel(result, expected, relative_error float64, test_description string) {
-
-	var status bool
-
-	// Check for NaN vs inf vs number
-
-	if math.IsNaN(result) || math.IsNaN(expected) {
-		status = math.IsNaN(result) != math.IsNaN(expected)
-	} else if math.IsInf(result, 0) || math.IsInf(expected, 0) {
-		status = math.IsInf(result, 0) != math.IsInf(expected, 0)
-	} else if expected != 0 {
-		status = math.Abs(result-expected)/math.Abs(expected) > relative_error
-	} else {
-		status = math.Abs(result) > relative_error
-	}
-
-	if status == true {
-		fmt.Printf("FAIL: %s (%f observed vs %g expected)\n",
-			test_description, result, expected)
-		os.Exit(1)
-	}
-}
 
 // Main test routine
 func testFloat64(t *testing.T, stridea, strideb int) {
