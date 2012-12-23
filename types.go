@@ -47,9 +47,8 @@ func (f *Int64) Less(i, j int) bool            { return (*f)[i] < (*f)[j] }
 func (f *Int64) Swap(i, j int)                 { (*f)[i], (*f)[j] = (*f)[j], (*f)[i] }
 
 //
-// Strider strides over the data. It makes steps of size "stride".
+// Strider strides over the data, for sampling purposes.
 //
-
 type Strider struct {
 	Interface
 	stride int
