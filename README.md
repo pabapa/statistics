@@ -10,7 +10,7 @@ For the API overview see [Godoc](http://godoc.org/github.com/grd/statistics).
 - For sampling purposes there is a Strider type provided.
 
 Testing 100% pass. Testing covers the complete functionality.  
-Tested on Debian6 32-bit.
+Tested on Debian6 32-bit and Windows 7 64-bit.
 
 **Stable API**. I have absolutely no plans in changing the API.
 
