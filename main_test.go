@@ -74,6 +74,3 @@ func TestMain(t *testing.T) {
 
 	testNist()
 }
-
-
-

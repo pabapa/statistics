@@ -19,8 +19,11 @@ package statistics
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-func QuantileFromSortedData(sorted_data Interface, f float64) (result float64) {
-	n := sorted_data.Len()
+// QuantileFromSortedData performs the quantile function, also called percent 
+// point function or inverse cumulative distribution function, on the sorted data. 
+// Note that the function doesn't check wheather the data is actually sorted.
+func QuantileFromSortedData(sortedData Interface, f float64) (result float64) {
+	n := sortedData.Len()
 	index := f * float64(n-1)
 	lhs := int(index)
 	delta := index - float64(lhs)
@@ -30,9 +33,9 @@ func QuantileFromSortedData(sorted_data Interface, f float64) (result float64) {
 	}
 
 	if lhs == n-1 {
-		result = sorted_data.Value(lhs)
+		result = sortedData.Value(lhs)
 	} else {
-		result = (1-delta)*sorted_data.Value(lhs) + delta*sorted_data.Value(lhs+1)
+		result = (1-delta)*sortedData.Value(lhs) + delta*sortedData.Value(lhs+1)
 	}
 
 	return

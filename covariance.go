@@ -19,7 +19,9 @@ package statistics
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+// takes a dataset and calculates the covariance
 func covariance(data1, data2 Interface, mean1, mean2 float64) (ret float64) {
+	// calculate the sum of the squares
 	for i := 0; i < data1.Len(); i++ {
 		delta1 := (data1.Value(i) - mean1)
 		delta2 := (data2.Value(i) - mean2)

@@ -19,8 +19,10 @@ package statistics
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-func MedianFromSortedData(sorted_data Interface) (median float64) {
-	Len := sorted_data.Len()
+// MedianFromSortedData calculates the median of the sorted data. 
+// Note that the function doesn't check wheather the data is actually sorted.
+func MedianFromSortedData(sortedData Interface) (median float64) {
+	Len := sortedData.Len()
 	lhs := (Len - 1) / 2
 	rhs := Len / 2
 
@@ -29,9 +31,9 @@ func MedianFromSortedData(sorted_data Interface) (median float64) {
 	}
 
 	if lhs == rhs {
-		median = sorted_data.Value(lhs)
+		median = sortedData.Value(lhs)
 	} else {
-		median = (sorted_data.Value(lhs) + sorted_data.Value(rhs)) / 2.0
+		median = (sortedData.Value(lhs) + sortedData.Value(rhs)) / 2.0
 	}
 
 	return

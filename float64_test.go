@@ -25,7 +25,6 @@ import (
 	"testing"
 )
 
-
 // Main test routine
 func testFloat64(t *testing.T, stridea, strideb int) {
 

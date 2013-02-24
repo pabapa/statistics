@@ -29,6 +29,11 @@ func KurtosisMainSd(data Interface, mean, sd float64) float64 {
 	var avg, kurtosis float64
 	Len := data.Len()
 
+	// calculate the fourth moment the deviations, normalized by the sd
+
+	// we use a recurrence relation to stable update a running value so
+	// there aren't any large sums that can overflow
+
 	for i := 0; i < Len; i++ {
 		x := (data.Value(i) - mean) / sd
 		avg += (x*x*x*x - avg) / float64(i+1)

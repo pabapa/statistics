@@ -14,10 +14,7 @@ Tested on Debian6 32-bit and Windows 7 64-bit.
 
 **Stable API**. I have absolutely no plans in changing the API.
 
-### TODO:
-- Update documentation and comment the functions.
-
 ### Offtopic:
 - GSL 1.9 Statistics C library: 181 kb, 54 files
-- Go Statistics library       :  83 kb, 25 files  :-)
+- Go Statistics library       :  83 kb, 26 files  :-)
 

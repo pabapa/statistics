@@ -30,7 +30,7 @@ func _variance(data Interface, mean float64) (variance float64) {
 	for i := 0; i < Len; i++ {
 		delta := data.Value(i) - mean
 		// TODO: long double for variance... How to implement in Go?
-		variance += (delta*delta - variance) / float64(i+1)
+		variance += ((delta * delta) - variance) / float64(i+1)
 	}
 
 	return
