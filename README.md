@@ -4,6 +4,9 @@ Pure [Go](http://www.golang.org) implementation of the [GSL Statistics library](
 
 For the API overview see [Godoc](http://godoc.org/github.com/grd/statistics).
 
+### Note:
+An updated version of this package is https://github.com/grd/stat.
+
 ### API Interfaces:
 - It uses interfaces for the data access. So different data types can be used.
 - Two datatypes are pre-defined: Float64 and Int64.
