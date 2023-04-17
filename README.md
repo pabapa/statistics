@@ -2,7 +2,7 @@
 
 Pure [Go](http://www.golang.org) implementation of the [GSL Statistics library](http://www.gnu.org/software/gsl/manual/html_node/Statistics.html).
 
-For the API overview see [Godoc](http://godoc.org/github.com/grd/statistics).
+For the API overview see [Godoc](http://godoc.org/github.com/pabapa/statistics).
 
 ### Note:
 An updated version of this package is https://github.com/grd/stat.
